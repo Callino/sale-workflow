@@ -23,6 +23,9 @@
 
 from openerp import fields, models, api
 from openerp.tools.translate import _
+import logging
+
+_logger = logging.getLogger(__name__)
 
 
 class sale_order(models.Model):
@@ -40,7 +43,7 @@ class sale_order(models.Model):
                                      copy=False)
     unrevisioned_name = fields.Char('Order Reference',
                                     copy=True,
-                                    readonly=True)
+                                    readonly=False)
     active = fields.Boolean('Active',
                             default=True,
                             copy=True)
@@ -53,7 +56,13 @@ class sale_order(models.Model):
 
     @api.multi
     def copy_quotation(self):
+        _logger.info("in copy quotation")
         self.ensure_one()
+
+        # save existing procurement group id and remove it for new revision
+        procurement_group_id = self.procurement_group_id.id
+        self.write({'procurement_group_id': None})
+
         revision_self = self.with_context(new_sale_revision=True)
         action = super(sale_order, revision_self).copy_quotation()
         old_revision = self.browse(action['res_id'])
@@ -61,13 +70,23 @@ class sale_order(models.Model):
         self.delete_workflow()
         self.create_workflow()
         self.write({'state': 'draft'})
-        self.order_line.write({'state': 'draft'})
-        # remove old procurements
-        self.mapped('order_line.procurement_ids').write(
-            {'sale_line_id': False})
         msg = _('New revision created: %s') % self.name
         self.message_post(body=msg)
         old_revision.message_post(body=msg)
+
+        # put existing procurement group id on old order
+        old_revision.write({'procurement_group_id': procurement_group_id})
+        self.write({'procurement_group_id': None})
+
+        # swap order lines of old and new order
+        old_line_ids = [line.id for line in old_revision.order_line]
+        new_line_ids = [line.id for line in self.order_line]
+        so_line = self.pool.get('sale.order.line')
+        so_line.write(self._cr, self._uid, old_line_ids,
+                      {'order_id': self.id}, context=self._context)
+        so_line.write(self._cr, self._uid, new_line_ids,
+                      {'order_id': old_revision.id}, context=self._context)
+
         return action
 
     @api.returns('self', lambda value: value.id)
@@ -76,8 +95,10 @@ class sale_order(models.Model):
         if not defaults:
             defaults = {}
         if self.env.context.get('new_sale_revision'):
+            # Create a revision of the sale order
             prev_name = self.name
             revno = self.revision_number
+            _logger.info("current revision number: %d", revno)
             self.write({'revision_number': revno + 1,
                         'name': '%s-%02d' % (self.unrevisioned_name,
                                              revno + 1)
@@ -87,7 +108,6 @@ class sale_order(models.Model):
                              'active': False,
                              'state': 'cancel',
                              'current_revision_id': self.id,
-                             'unrevisioned_name': self.unrevisioned_name,
                              })
         return super(sale_order, self).copy(defaults)
 

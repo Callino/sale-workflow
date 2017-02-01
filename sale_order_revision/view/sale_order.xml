@@ -8,6 +8,10 @@
             <field name="arch" type="xml">
                 <notebook position="inside">
                     <page string="Revisions">
+                        <group string="Aktuelle Revision">
+                            <field name="unrevisioned_name"/>
+                            <field name="revision_number"/>
+                        </group>
                         <field name="old_revision_ids" >
                             <tree>
                                 <field name='name'/>
