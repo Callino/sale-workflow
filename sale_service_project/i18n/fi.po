@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sale-workflow (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-11 16:49+0000\n"
-"PO-Revision-Date: 2016-09-15 12:48+0000\n"
+"POT-Creation-Date: 2016-12-24 04:49+0000\n"
+"PO-Revision-Date: 2016-12-27 08:25+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Finnish (http://www.transifex.com/oca/OCA-sale-workflow-8-0/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -149,7 +149,7 @@ msgstr ""
 #. module: sale_service_project
 #: model:ir.model,name:sale_service_project.model_account_invoice
 msgid "Invoice"
-msgstr ""
+msgstr "Lasku"
 
 #. module: sale_service_project
 #: model:ir.model,name:sale_service_project.model_account_invoice_line
@@ -232,7 +232,7 @@ msgstr ""
 #. module: sale_service_project
 #: field:product.task.work,name:0 field:sale.order.line.task.work,name:0
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #. module: sale_service_project
 #: field:sale.order.line.task.materials,order_line_id:0
@@ -286,7 +286,7 @@ msgstr ""
 #. module: sale_service_project
 #: model:ir.model,name:sale_service_project.model_product_template
 msgid "Product Template"
-msgstr ""
+msgstr "Tuotteen malli"
 
 #. module: sale_service_project
 #: model:ir.model,name:sale_service_project.model_project_project
@@ -340,7 +340,7 @@ msgstr ""
 #. module: sale_service_project
 #: model:ir.model,name:sale_service_project.model_project_task
 msgid "Task"
-msgstr ""
+msgstr "Tehtävä"
 
 #. module: sale_service_project
 #: view:product.task.materials:sale_service_project.product_task_materials_form_view

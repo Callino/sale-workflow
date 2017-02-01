@@ -21,23 +21,28 @@ addon | version | summary
 [account_invoice_reorder_lines](account_invoice_reorder_lines/) | 8.0.1.0.0 | Provide a new field on the invoice line form, allowing to manage the lines order.
 [partner_prepayment](partner_prepayment/) | 8.0.1.0.0 | Option on partner to set prepayment policy
 [partner_prospect](partner_prospect/) | 8.0.1.0.0 | Partner Prospect
+[product_margin_classification](product_margin_classification/) | 8.0.1.0.0 | Product Margin Classification
 [sale_allotment](sale_allotment/) | 8.0.1.1.0 | Separate the shipment according to allotment partner
 [sale_automatic_workflow](sale_automatic_workflow/) | 8.0.0.3.0 | Sale Automatic Workflow
 [sale_automatic_workflow_exception](sale_automatic_workflow_exception/) | 8.0.1.0.0 | Sale Automatic Workflow Exception
 [sale_cancel_reason](sale_cancel_reason/) | 8.0.1.1.0 | Sale Cancel Reason
+[sale_change_price](sale_change_price/) | 8.0.1.0.0 | Sale Change Price
 [sale_exception_nostock](sale_exception_nostock/) | 8.0.1.2.0 | Sale stock exception
 [sale_exceptions](sale_exceptions/) | 8.0.1.0.0 | Custom exceptions on sale order
 [sale_last_price_info](sale_last_price_info/) | 8.0.1.0.0 | Product Last Price Info - Sale
 [sale_order_add_variants](sale_order_add_variants/) | 8.0.0.1.0 | Add variants from template into sale order
 [sale_order_back2draft](sale_order_back2draft/) | 8.0.1.0.0 | Back to draft on sales orders
+[sale_order_calendar_event](sale_order_calendar_event/) | 8.0.1.0.0 | Allows you to attach appointments related to sale orders to the order itself
 [sale_order_line_description](sale_order_line_description/) | 8.0.1.0.0 | Sale order line description
 [sale_order_line_variant_description](sale_order_line_variant_description/) | 8.0.1.0.0 | Sale order line variant description
 [sale_order_lot_selection](sale_order_lot_selection/) | 8.0.1.0.0 | Sale Order Lot Selection
+[sale_order_merge](sale_order_merge/) | 8.0.1.0.0 | Merge sale orders that are confirmed, invoiced or delivered
 [sale_order_price_recalculation](sale_order_price_recalculation/) | 8.0.1.0.0 | Price recalculation in sales orders
 [sale_order_revision](sale_order_revision/) | 8.0.0.1.0 | Sale order revisions
 [sale_order_type](sale_order_type/) | 8.0.1.0.1 | Sale Order Types
 [sale_order_type_sale_journal](sale_order_type_sale_journal/) | 8.0.1.0.0 | Link module between sale_order_type and sale_journal
 [sale_order_unified_menu](sale_order_unified_menu/) | 8.0.1.0.0 | Sale Order Unified Menu
+[sale_order_weight](sale_order_weight/) | 8.0.1.0.0 | Sale Order Weight
 [sale_owner_stock_sourcing](sale_owner_stock_sourcing/) | 8.0.0.1.0 | Manage stock ownership on sale order lines
 [sale_packaging_price](sale_packaging_price/) | 8.0.1.0.0 | Sale Packaging Price
 [sale_partner_incoterm](sale_partner_incoterm/) | 8.0.1.0.0 | Set the customer preferred incoterm on each sales order

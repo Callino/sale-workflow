@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sale-workflow (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-04 13:41+0000\n"
+"POT-Creation-Date: 2016-12-23 01:49+0000\n"
 "PO-Revision-Date: 2015-09-03 07:10+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/oca/OCA-sale-workflow-8-0/language/pt_BR/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: sale_quotation_sourcing
 #: view:sale.order.sourcing:sale_quotation_sourcing.sale_order_sourcing_wizard
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #. module: sale_quotation_sourcing
 #: field:sale.order.line.sourcing,create_uid:0
@@ -82,17 +82,17 @@ msgstr ""
 #. module: sale_quotation_sourcing
 #: model:ir.model,name:sale_quotation_sourcing.model_procurement_order
 msgid "Procurement"
-msgstr ""
+msgstr "Aprovisionamento"
 
 #. module: sale_quotation_sourcing
 #: field:sale.order.line.sourcing,product_id:0
 msgid "Product"
-msgstr ""
+msgstr "Produto"
 
 #. module: sale_quotation_sourcing
 #: model:ir.model,name:sale_quotation_sourcing.model_purchase_order_line
 msgid "Purchase Order Line"
-msgstr ""
+msgstr "Linha da Ordem de Compra"
 
 #. module: sale_quotation_sourcing
 #: view:sale.order.sourcing:sale_quotation_sourcing.sale_order_sourcing_wizard
@@ -117,7 +117,7 @@ msgstr ""
 #. module: sale_quotation_sourcing
 #: model:ir.model,name:sale_quotation_sourcing.model_sale_order
 msgid "Sales Order"
-msgstr ""
+msgstr "Pedido de Venda"
 
 #. module: sale_quotation_sourcing
 #: model:ir.model,name:sale_quotation_sourcing.model_sale_order_line
@@ -155,4 +155,4 @@ msgstr ""
 #. module: sale_quotation_sourcing
 #: view:sale.order.sourcing:sale_quotation_sourcing.sale_order_sourcing_wizard
 msgid "or"
-msgstr ""
+msgstr "ou"
