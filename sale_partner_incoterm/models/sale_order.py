@@ -24,9 +24,8 @@ class Sale(models.Model):
     _inherit = 'sale.order'
 
     @api.multi
-    def onchange_partner_id(self, partner_id):
-        res = super(Sale, self).onchange_partner_id(partner_id)
-        if partner_id:
-            res['value']['incoterm'] = self.env['res.partner'].browse(
-                partner_id).sale_incoterm_id.id
-        return res
+    @api.onchange('partner_id')
+    def onchange_partner_id(self):
+        super(Sale, self).onchange_partner_id()
+        if self.partner_id:
+            self.incoterm = (self.partner_id.sale_incoterm_id.id if self.partner_id.sale_incoterm_id else None)
